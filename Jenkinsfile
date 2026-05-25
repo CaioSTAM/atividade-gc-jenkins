@@ -3,7 +3,7 @@ pipeline {
 
     tools {
         maven 'Maven'
-        jdk 'JDK25'
+        jdk 'JDK17'
     }
 
     triggers {
@@ -21,14 +21,14 @@ pipeline {
         stage('Build') {
             steps {
                 echo 'Compilando o projeto...'
-                sh 'mvn clean compile'
+                bat 'mvn clean compile'
             }
         }
 
         stage('Testes') {
             steps {
                 echo 'Executando testes unitários...'
-                sh 'mvn -Dmaven.test.failure.ignore=true test'
+                bat 'mvn -Dmaven.test.failure.ignore=true test'
             }
 
             post {
@@ -41,7 +41,7 @@ pipeline {
         stage('Cobertura') {
             steps {
                 echo 'Gerando relatório de cobertura com JaCoCo...'
-                sh 'mvn verify'
+                bat 'mvn verify'
             }
 
             post {
