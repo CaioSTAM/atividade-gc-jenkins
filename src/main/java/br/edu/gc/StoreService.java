@@ -13,7 +13,7 @@ public class StoreService {
             throw new IllegalArgumentException("O percentual de desconto deve estar entre 0 e 100.");
         }
 
-        return originalPrice - (originalPrice * discountPercentage / 100);
+        return originalPrice + (originalPrice * discountPercentage / 100);
     }
 
     public boolean isFreeShipping(double purchaseValue) {
