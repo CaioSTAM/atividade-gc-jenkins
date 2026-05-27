@@ -8,7 +8,7 @@ Demonstrar um processo inicial de Integração Contínua usando Jenkins integrad
 
 ## Tecnologias utilizadas
 
-- Java 17
+- Java 25
 - Maven
 - JUnit 5
 - JaCoCo
